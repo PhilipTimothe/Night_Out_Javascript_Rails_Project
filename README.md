@@ -1,1 +1,1 @@
-# Night_Out_Javascript_Rails_Progect
+# Night_Out_Javascript_Rails_Project
