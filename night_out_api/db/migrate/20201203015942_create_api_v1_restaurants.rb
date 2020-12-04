@@ -9,7 +9,7 @@ class CreateApiV1Restaurants < ActiveRecord::Migration[6.0]
       t.string :address
       t.string :image
       t.integer :likes
-      t.integer :neighborhood_id
+      t.integer :location_id
 
       t.timestamps
     end
