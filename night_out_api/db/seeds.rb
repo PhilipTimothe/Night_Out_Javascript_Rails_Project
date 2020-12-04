@@ -9,80 +9,103 @@
 locations =  [
     {
       "id": 1,
-      "neighborhood": "West Village"
+      "neighborhood": "West Village",
+      "image": "https://image.newyork.com.au/wp-content/uploads/2010/05/West-Village-New-York.jpeg"
     },
     {
       "id": 2,
-      "neighborhood": "East Village"
+      "neighborhood": "East Village",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d9/East_Village_Second_Avenue.jpg"
     },
     {
       "id": 3,
-      "neighborhood": "Soho"
+      "neighborhood": "Soho",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9e/NYC_SoHo_Green_Street.jpg"
     },
     {
       "id": 4,
-      "neighborhood": "Lower East Side"
+      "neighborhood": "Lower East Side",
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/0c/bc/16/f9/murales-al-lower-east.jpg"
     },
     {
       "id": 5,
-      "neighborhood": "Lower West Side"
+      "neighborhood": "Lower West Side",
+      "image": "https://lh3.googleusercontent.com/proxy/7XyDhO2-ic2lYC-88I26POocEJJaGMw3XfwEzYULmgWYqvSO4cUGtsyPiemMmUFKdY-JO_t06XLvfTJPqEjIcQKZy06pfD7hMNy2QxZRstcW6OQcBcCC09sNI14GS4IdTl-gpodYpR3VHztZzQ"
     },
     {
       "id": 6,
-      "neighborhood": "Chelsea"
+      "neighborhood": "Chelsea",
+      "image": "https://media.timeout.com/images/105160348/image.jpg"
     },
     {
       "id": 7,
-      "neighborhood": "Hell's Kitchen"
+      "neighborhood": "Hell's Kitchen",
+      "image": "https://media.timeout.com/images/105259656/630/472/image.jpg"
     },
     {
       "id": 8,
-      "neighborhood": "Tribeca"
+      "neighborhood": "Tribeca",
+      "image": "https://i.pinimg.com/originals/88/ae/eb/88aeebed9e2f733de2fbde7f34e3f7f4.jpg"
     },
     {
       "id": 9,
-      "neighborhood": "Greenwich Village"
+      "neighborhood": "Greenwich Village",
+      "image": "https://www.tripsavvy.com/thmb/MyeXgbO5Vx60sQOqwzivFBpEM1c=/3956x2225/smart/filters:no_upscale()/greenwich-village-street-scene-537559314-5c2d29a3c9e77c0001709e1e.jpg"
     },
     {
       "id": 10,
-      "neighborhood": "Park Slope"
+      "neighborhood": "Park Slope",
+      "image": "https://media.timeout.com/images/103429959/630/472/image.jpg"
     },
     {
       "id": 11,
-      "neighborhood": "Flatiron"
+      "neighborhood": "Flatiron",
+      "image": "https://i1.wp.com/nypost.com/wp-content/uploads/sites/2/2017/07/macmillan-leaving-flatiron.jpg?quality=80&strip=all&ssl=1"
     },
     {
       "id": 12,
-      "neighborhood": "Midtown East"
+      "neighborhood": "Midtown East",
+      "image": "https://images.squarespace-cdn.com/content/v1/5441c56de4b0f7692c6f6c2f/1432669250345-QGGBK39334G4MZSHJQ3J/ke17ZwdGBToddI8pDm48kAGx3IFADtt9koaOuly55F57gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0pTKqSDRwmMK43IUI3HojJX_iGOyvGz0VEAhzFdMwNTUP3iYIRpjRWHZRVGJwIQ0nA/midtown-east-9+-+Copy.jpg"
     },
     {
       "id": 13,
-      "neighborhood": "Midtown West"
+      "neighborhood": "Midtown West",
+      "image": "https://static.travelweekly.com/i/sized/780/437/www.cfmedia.vfmleonardo.com/imageRepo/6/0/99/449/38/nycmf-exterior-1298-hor-clsc_O.jpg"
     },
     {
       "id": 14,
-      "neighborhood": "Meatpacking District"
+      "neighborhood": "Meatpacking District",
+      "image": "https://newyorkyimby.com/wp-content/uploads/2020/05/View-from-9th-Avenue-and-West-14th-Street-of-proposed-restorations-and-addition.jpg"
     },
     {
       "id": 15,
-      "neighborhood": "Financial District"
+      "neighborhood": "Financial District",
+      "image": "https://www.duanestreethotel.com/wp-content/uploads/2017/04/GettyImages-641176590.jpg"
     },
     {
       "id": 16,
-      "neighborhood": "Theater District"
+      "neighborhood": "Theater District",
+      "image": "https://www.thetravelteam.com/wp-content/uploads/2018/12/nyc-theatre-district-to-do.jpg"
     },
     {
       "id": 17,
-      "neighborhood": "Astoria"
+      "neighborhood": "Astoria",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Astoriaqueens33rdand31st.jpg/1200px-Astoriaqueens33rdand31st.jpg"
     },
     {
       "id": 18,
-      "neighborhood": "Bushwich"
+      "neighborhood": "Bushwich",
+      "image": "https://www.cubesmart.com/blog/wp-content/uploads/Bushwick-Collective-Mural-Brooklyn-New-York-8.jpg"
     },
+    {
+      "id": 19,
+      "neighborhood": "Williamsburgh",
+      "image": "https://www.tripsavvy.com/thmb/uU7_xCAmrA1HXVvmOpngDjhq3jk=/3435x2576/smart/filters:no_upscale()/south-williamsburg-streetscape--brooklyn-567893317-5ad92d2aa474be0036f506a3.jpg"
+    }
   ]
 
 locations.each do |location|
-    Api::V1::Location.create(neighborhood: location[:neighborhood])
+    Api::V1::Location.create(neighborhood: location[:neighborhood], image: location[:image])
 end
 
 restaurants =  [

@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2020_12_03_193858) do
 
   create_table "api_v1_locations", force: :cascade do |t|
     t.string "neighborhood"
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
