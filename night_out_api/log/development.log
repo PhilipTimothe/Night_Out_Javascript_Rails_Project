@@ -2848,3 +2848,694 @@ Processing by Api::V1::LocationsController#index as */*
 Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.4ms | Allocations: 4870)
 
 
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mApi::V1::Location Load (0.5ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mApi::V1::Location Load (0.6ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" ORDER BY "api_v1_locations"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_locations"[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_restaurants"[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201203193858)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201203015942);
+
+[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-04 21:56:35.974865"], ["updated_at", "2020-12-04 21:56:35.974865"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "abb986dde58f827c0ed942233ca181dd32620c64"], ["created_at", "2020-12-04 21:56:35.984396"], ["updated_at", "2020-12-04 21:56:35.984396"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_locations"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_restaurants"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201203193858)[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201203015942);
+
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-04 21:56:36.008534"], ["updated_at", "2020-12-04 21:56:36.008534"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-12-04 21:56:36.014666"], ["key", "environment"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "abb986dde58f827c0ed942233ca181dd32620c64"], ["created_at", "2020-12-04 21:56:36.020742"], ["updated_at", "2020-12-04 21:56:36.020742"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "West Village"], ["image", "https://image.newyork.com.au/wp-content/uploads/2010/05/West-Village-New-York.jpeg"], ["created_at", "2020-12-04 21:56:36.044857"], ["updated_at", "2020-12-04 21:56:36.044857"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "East Village"], ["image", "https://upload.wikimedia.org/wikipedia/commons/d/d9/East_Village_Second_Avenue.jpg"], ["created_at", "2020-12-04 21:56:36.049269"], ["updated_at", "2020-12-04 21:56:36.049269"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Soho"], ["image", "https://upload.wikimedia.org/wikipedia/commons/9/9e/NYC_SoHo_Green_Street.jpg"], ["created_at", "2020-12-04 21:56:36.053305"], ["updated_at", "2020-12-04 21:56:36.053305"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Lower East Side"], ["image", "https://media-cdn.tripadvisor.com/media/photo-s/0c/bc/16/f9/murales-al-lower-east.jpg"], ["created_at", "2020-12-04 21:56:36.057662"], ["updated_at", "2020-12-04 21:56:36.057662"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Lower West Side"], ["image", "https://lh3.googleusercontent.com/proxy/7XyDhO2-ic2lYC-88I26POocEJJaGMw3XfwEzYULmgWYqvSO4cUGtsyPiemMmUFKdY-JO_t06XLvfTJPqEjIcQKZy06pfD7hMNy2QxZRstcW6OQcBcCC09sNI14GS4IdTl-gpodYpR3VHztZzQ"], ["created_at", "2020-12-04 21:56:36.061642"], ["updated_at", "2020-12-04 21:56:36.061642"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Chelsea"], ["image", "https://media.timeout.com/images/105160348/image.jpg"], ["created_at", "2020-12-04 21:56:36.065823"], ["updated_at", "2020-12-04 21:56:36.065823"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Hell's Kitchen"], ["image", "https://media.timeout.com/images/105259656/630/472/image.jpg"], ["created_at", "2020-12-04 21:56:36.086476"], ["updated_at", "2020-12-04 21:56:36.086476"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Tribeca"], ["image", "https://i.pinimg.com/originals/88/ae/eb/88aeebed9e2f733de2fbde7f34e3f7f4.jpg"], ["created_at", "2020-12-04 21:56:36.090955"], ["updated_at", "2020-12-04 21:56:36.090955"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Greenwich Village"], ["image", "https://www.tripsavvy.com/thmb/MyeXgbO5Vx60sQOqwzivFBpEM1c=/3956x2225/smart/filters:no_upscale()/greenwich-village-street-scene-537559314-5c2d29a3c9e77c0001709e1e.jpg"], ["created_at", "2020-12-04 21:56:36.096224"], ["updated_at", "2020-12-04 21:56:36.096224"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Park Slope"], ["image", "https://media.timeout.com/images/103429959/630/472/image.jpg"], ["created_at", "2020-12-04 21:56:36.101534"], ["updated_at", "2020-12-04 21:56:36.101534"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Flatiron"], ["image", "https://i1.wp.com/nypost.com/wp-content/uploads/sites/2/2017/07/macmillan-leaving-flatiron.jpg?quality=80&strip=all&ssl=1"], ["created_at", "2020-12-04 21:56:36.105864"], ["updated_at", "2020-12-04 21:56:36.105864"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Midtown East"], ["image", "https://images.squarespace-cdn.com/content/v1/5441c56de4b0f7692c6f6c2f/1432669250345-QGGBK39334G4MZSHJQ3J/ke17ZwdGBToddI8pDm48kAGx3IFADtt9koaOuly55F57gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0pTKqSDRwmMK43IUI3HojJX_iGOyvGz0VEAhzFdMwNTUP3iYIRpjRWHZRVGJwIQ0nA/midtown-east-9+-+Copy.jpg"], ["created_at", "2020-12-04 21:56:36.110197"], ["updated_at", "2020-12-04 21:56:36.110197"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Midtown West"], ["image", "https://static.travelweekly.com/i/sized/780/437/www.cfmedia.vfmleonardo.com/imageRepo/6/0/99/449/38/nycmf-exterior-1298-hor-clsc_O.jpg"], ["created_at", "2020-12-04 21:56:36.115108"], ["updated_at", "2020-12-04 21:56:36.115108"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Meatpacking District"], ["image", "https://newyorkyimby.com/wp-content/uploads/2020/05/View-from-9th-Avenue-and-West-14th-Street-of-proposed-restorations-and-addition.jpg"], ["created_at", "2020-12-04 21:56:36.121468"], ["updated_at", "2020-12-04 21:56:36.121468"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Financial District"], ["image", "https://www.duanestreethotel.com/wp-content/uploads/2017/04/GettyImages-641176590.jpg"], ["created_at", "2020-12-04 21:56:36.125922"], ["updated_at", "2020-12-04 21:56:36.125922"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Theater District"], ["image", "https://www.thetravelteam.com/wp-content/uploads/2018/12/nyc-theatre-district-to-do.jpg"], ["created_at", "2020-12-04 21:56:36.130340"], ["updated_at", "2020-12-04 21:56:36.130340"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Astoria"], ["image", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Astoriaqueens33rdand31st.jpg/1200px-Astoriaqueens33rdand31st.jpg"], ["created_at", "2020-12-04 21:56:36.135078"], ["updated_at", "2020-12-04 21:56:36.135078"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Bushwich"], ["image", "https://www.cubesmart.com/blog/wp-content/uploads/Bushwick-Collective-Mural-Brooklyn-New-York-8.jpg"], ["created_at", "2020-12-04 21:56:36.139339"], ["updated_at", "2020-12-04 21:56:36.139339"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Williamsburgh"], ["image", "https://www.tripsavvy.com/thmb/uU7_xCAmrA1HXVvmOpngDjhq3jk=/3435x2576/smart/filters:no_upscale()/south-williamsburg-streetscape--brooklyn-567893317-5ad92d2aa474be0036f506a3.jpg"], ["created_at", "2020-12-04 21:56:36.143637"], ["updated_at", "2020-12-04 21:56:36.143637"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bonnie's Grill"], ["cuisine", "American"], ["style", "Hot & Spicy Regional American Cuisine"], ["phone_number", "(718) 369-9527"], ["menu", "https://www.eatatbonnies.com/menu"], ["address", "278 5th Ave, Brooklyn, NY 11215"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/hJKYzCF0t95zlFMtyzneQg/l.jpg"], ["likes", 5], ["location_id", 10], ["created_at", "2020-12-04 21:56:36.170786"], ["updated_at", "2020-12-04 21:56:36.170786"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gramercy Tavern"], ["cuisine", "American(New)"], ["style", "Danny Meyer's Flatiron District tavern "], ["phone_number", "(212) 477-0777"], ["menu", "https://www.gramercytavern.com/gramercy-tavern-menu/"], ["address", "42 E 20th St, New York, NY 10003"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/MgfPMoFNmjIWcrMxTZbsvw/l.jpg"], ["likes", 8], ["location_id", 11], ["created_at", "2020-12-04 21:56:36.176728"], ["updated_at", "2020-12-04 21:56:36.176728"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Catch NYC"], ["cuisine", "Asian"], ["style", "Asian Fusion, Sushi Bars, Seafood"], ["phone_number", "(212) 392-5978"], ["menu", "https://catchrestaurants.com/catchnyc/#menu"], ["address", "21 9th Ave, New York, NY 10014"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/NBWlgWmKUEaE-k0CF9b5wg/l.jpg"], ["likes", 3], ["location_id", 14], ["created_at", "2020-12-04 21:56:36.183119"], ["updated_at", "2020-12-04 21:56:36.183119"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "La Loteria"], ["cuisine", "Mexican"], ["style", "Imaginative twists on Mexican dishes, plus cocktails, presented in a modern, convivial setting."], ["phone_number", "(212) 858-9096"], ["menu", "http://www.laloterianyc.com/menus/"], ["address", "29 7th Ave S, New York, NY 10014"], ["image", "https://images.squarespace-cdn.com/content/v1/546f8abce4b08b01e3cfaa4b/1421176275576-1I0F3UJK8CK3APXMXKMV/ke17ZwdGBToddI8pDm48kKCzQu6R4BT5zqRe40olNKZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTm8gdG5xRTtrVVyLXkddLwchyHhFWTGlN3cUNTMki5PNY1TGRehHG5SCVISp4ZVDSB/IMG_3616.jpg?format=500w"], ["likes", 4], ["location_id", 1], ["created_at", "2020-12-04 21:56:36.189270"], ["updated_at", "2020-12-04 21:56:36.189270"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hortus NYC"], ["cuisine", "Korean"], ["style", "Asian Fusion, Korean, Tapas/Small Plates"], ["phone_number", "(646) 858-3784"], ["menu", "https://www.hortusnyc.com/menu/"], ["address", "271 5th Ave, New York, NY 10016"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/xTBJX2kp5dr69chHlG-pnQ/l.jpg"], ["likes", 1], ["location_id", 13], ["created_at", "2020-12-04 21:56:36.196198"], ["updated_at", "2020-12-04 21:56:36.196198"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Excuse My French"], ["cuisine", "French"], ["style", "Bars, Tapas Bars, French"], ["phone_number", "(212) 780-9600"], ["menu", "https://www.excusemyfrench-nyc.com/copy-of-food-1"], ["address", "96 Orchard St, New York, NY 10002"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/VlKFsXO_TqOorH5sMWREWQ/o.jpg"], ["likes", 2], ["location_id", 4], ["created_at", "2020-12-04 21:56:36.202239"], ["updated_at", "2020-12-04 21:56:36.202239"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Blue Ribbon Brasserie"], ["cuisine", "American"], ["style", "American (Traditional), Cocktail Bars"], ["phone_number", "(212) 274-0404"], ["menu", "https://www.blueribbonrestaurants.com/restaurants/blue-ribbon-brasserie"], ["address", "97 Sullivan St, New York, NY 10012"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/OMYqqgQ-ioT7bCP82xvJDA/o.jpg"], ["likes", 0], ["location_id", 3], ["created_at", "2020-12-04 21:56:36.225035"], ["updated_at", "2020-12-04 21:56:36.225035"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mApi::V1::Location Load (0.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" ORDER BY "api_v1_locations"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_locations"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_restaurants"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201203193858)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201203015942);
+
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-04 21:57:14.571938"], ["updated_at", "2020-12-04 21:57:14.571938"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "abb986dde58f827c0ed942233ca181dd32620c64"], ["created_at", "2020-12-04 21:57:14.579351"], ["updated_at", "2020-12-04 21:57:14.579351"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_locations"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_restaurants"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201203193858)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201203015942);
+
+[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-04 21:57:14.604947"], ["updated_at", "2020-12-04 21:57:14.604947"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-12-04 21:57:14.610461"], ["key", "environment"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "abb986dde58f827c0ed942233ca181dd32620c64"], ["created_at", "2020-12-04 21:57:14.616459"], ["updated_at", "2020-12-04 21:57:14.616459"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "West Village"], ["image", "https://image.newyork.com.au/wp-content/uploads/2010/05/West-Village-New-York.jpeg"], ["created_at", "2020-12-04 21:57:14.638136"], ["updated_at", "2020-12-04 21:57:14.638136"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.6ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "East Village"], ["image", "https://upload.wikimedia.org/wikipedia/commons/d/d9/East_Village_Second_Avenue.jpg"], ["created_at", "2020-12-04 21:57:14.642693"], ["updated_at", "2020-12-04 21:57:14.642693"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.6ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Soho"], ["image", "https://upload.wikimedia.org/wikipedia/commons/9/9e/NYC_SoHo_Green_Street.jpg"], ["created_at", "2020-12-04 21:57:14.647926"], ["updated_at", "2020-12-04 21:57:14.647926"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Lower East Side"], ["image", "https://media-cdn.tripadvisor.com/media/photo-s/0c/bc/16/f9/murales-al-lower-east.jpg"], ["created_at", "2020-12-04 21:57:14.655232"], ["updated_at", "2020-12-04 21:57:14.655232"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.6ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Lower West Side"], ["image", "https://lh3.googleusercontent.com/proxy/7XyDhO2-ic2lYC-88I26POocEJJaGMw3XfwEzYULmgWYqvSO4cUGtsyPiemMmUFKdY-JO_t06XLvfTJPqEjIcQKZy06pfD7hMNy2QxZRstcW6OQcBcCC09sNI14GS4IdTl-gpodYpR3VHztZzQ"], ["created_at", "2020-12-04 21:57:14.664477"], ["updated_at", "2020-12-04 21:57:14.664477"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.7ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Chelsea"], ["image", "https://media.timeout.com/images/105160348/image.jpg"], ["created_at", "2020-12-04 21:57:14.704230"], ["updated_at", "2020-12-04 21:57:14.704230"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Hell's Kitchen"], ["image", "https://media.timeout.com/images/105259656/630/472/image.jpg"], ["created_at", "2020-12-04 21:57:14.717179"], ["updated_at", "2020-12-04 21:57:14.717179"]]
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.6ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Tribeca"], ["image", "https://i.pinimg.com/originals/88/ae/eb/88aeebed9e2f733de2fbde7f34e3f7f4.jpg"], ["created_at", "2020-12-04 21:57:14.727744"], ["updated_at", "2020-12-04 21:57:14.727744"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Greenwich Village"], ["image", "https://www.tripsavvy.com/thmb/MyeXgbO5Vx60sQOqwzivFBpEM1c=/3956x2225/smart/filters:no_upscale()/greenwich-village-street-scene-537559314-5c2d29a3c9e77c0001709e1e.jpg"], ["created_at", "2020-12-04 21:57:14.746739"], ["updated_at", "2020-12-04 21:57:14.746739"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.6ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Park Slope"], ["image", "https://media.timeout.com/images/103429959/630/472/image.jpg"], ["created_at", "2020-12-04 21:57:14.758759"], ["updated_at", "2020-12-04 21:57:14.758759"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Flatiron"], ["image", "https://i1.wp.com/nypost.com/wp-content/uploads/sites/2/2017/07/macmillan-leaving-flatiron.jpg?quality=80&strip=all&ssl=1"], ["created_at", "2020-12-04 21:57:14.771885"], ["updated_at", "2020-12-04 21:57:14.771885"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.9ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Midtown East"], ["image", "https://images.squarespace-cdn.com/content/v1/5441c56de4b0f7692c6f6c2f/1432669250345-QGGBK39334G4MZSHJQ3J/ke17ZwdGBToddI8pDm48kAGx3IFADtt9koaOuly55F57gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0pTKqSDRwmMK43IUI3HojJX_iGOyvGz0VEAhzFdMwNTUP3iYIRpjRWHZRVGJwIQ0nA/midtown-east-9+-+Copy.jpg"], ["created_at", "2020-12-04 21:57:14.780993"], ["updated_at", "2020-12-04 21:57:14.780993"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.7ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Midtown West"], ["image", "https://static.travelweekly.com/i/sized/780/437/www.cfmedia.vfmleonardo.com/imageRepo/6/0/99/449/38/nycmf-exterior-1298-hor-clsc_O.jpg"], ["created_at", "2020-12-04 21:57:14.801529"], ["updated_at", "2020-12-04 21:57:14.801529"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Meatpacking District"], ["image", "https://newyorkyimby.com/wp-content/uploads/2020/05/View-from-9th-Avenue-and-West-14th-Street-of-proposed-restorations-and-addition.jpg"], ["created_at", "2020-12-04 21:57:14.824011"], ["updated_at", "2020-12-04 21:57:14.824011"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Financial District"], ["image", "https://www.duanestreethotel.com/wp-content/uploads/2017/04/GettyImages-641176590.jpg"], ["created_at", "2020-12-04 21:57:14.858309"], ["updated_at", "2020-12-04 21:57:14.858309"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Theater District"], ["image", "https://www.thetravelteam.com/wp-content/uploads/2018/12/nyc-theatre-district-to-do.jpg"], ["created_at", "2020-12-04 21:57:14.867810"], ["updated_at", "2020-12-04 21:57:14.867810"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Astoria"], ["image", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Astoriaqueens33rdand31st.jpg/1200px-Astoriaqueens33rdand31st.jpg"], ["created_at", "2020-12-04 21:57:14.877372"], ["updated_at", "2020-12-04 21:57:14.877372"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Bushwich"], ["image", "https://www.cubesmart.com/blog/wp-content/uploads/Bushwick-Collective-Mural-Brooklyn-New-York-8.jpg"], ["created_at", "2020-12-04 21:57:14.884549"], ["updated_at", "2020-12-04 21:57:14.884549"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Williamsburgh"], ["image", "https://www.tripsavvy.com/thmb/uU7_xCAmrA1HXVvmOpngDjhq3jk=/3435x2576/smart/filters:no_upscale()/south-williamsburg-streetscape--brooklyn-567893317-5ad92d2aa474be0036f506a3.jpg"], ["created_at", "2020-12-04 21:57:14.892823"], ["updated_at", "2020-12-04 21:57:14.892823"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bonnie's Grill"], ["cuisine", "American"], ["style", "Hot & Spicy Regional American Cuisine"], ["phone_number", "(718) 369-9527"], ["menu", "https://www.eatatbonnies.com/menu"], ["address", "278 5th Ave, Brooklyn, NY 11215"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/hJKYzCF0t95zlFMtyzneQg/l.jpg"], ["likes", 5], ["location_id", 10], ["created_at", "2020-12-04 21:57:14.935742"], ["updated_at", "2020-12-04 21:57:14.935742"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gramercy Tavern"], ["cuisine", "American(New)"], ["style", "Danny Meyer's Flatiron District tavern "], ["phone_number", "(212) 477-0777"], ["menu", "https://www.gramercytavern.com/gramercy-tavern-menu/"], ["address", "42 E 20th St, New York, NY 10003"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/MgfPMoFNmjIWcrMxTZbsvw/l.jpg"], ["likes", 8], ["location_id", 11], ["created_at", "2020-12-04 21:57:14.945730"], ["updated_at", "2020-12-04 21:57:14.945730"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Catch NYC"], ["cuisine", "Asian"], ["style", "Asian Fusion, Sushi Bars, Seafood"], ["phone_number", "(212) 392-5978"], ["menu", "https://catchrestaurants.com/catchnyc/#menu"], ["address", "21 9th Ave, New York, NY 10014"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/NBWlgWmKUEaE-k0CF9b5wg/l.jpg"], ["likes", 3], ["location_id", 14], ["created_at", "2020-12-04 21:57:14.953976"], ["updated_at", "2020-12-04 21:57:14.953976"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "La Loteria"], ["cuisine", "Mexican"], ["style", "Imaginative twists on Mexican dishes, plus cocktails, presented in a modern, convivial setting."], ["phone_number", "(212) 858-9096"], ["menu", "http://www.laloterianyc.com/menus/"], ["address", "29 7th Ave S, New York, NY 10014"], ["image", "https://images.squarespace-cdn.com/content/v1/546f8abce4b08b01e3cfaa4b/1421176275576-1I0F3UJK8CK3APXMXKMV/ke17ZwdGBToddI8pDm48kKCzQu6R4BT5zqRe40olNKZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTm8gdG5xRTtrVVyLXkddLwchyHhFWTGlN3cUNTMki5PNY1TGRehHG5SCVISp4ZVDSB/IMG_3616.jpg?format=500w"], ["likes", 4], ["location_id", 1], ["created_at", "2020-12-04 21:57:14.961669"], ["updated_at", "2020-12-04 21:57:14.961669"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hortus NYC"], ["cuisine", "Korean"], ["style", "Asian Fusion, Korean, Tapas/Small Plates"], ["phone_number", "(646) 858-3784"], ["menu", "https://www.hortusnyc.com/menu/"], ["address", "271 5th Ave, New York, NY 10016"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/xTBJX2kp5dr69chHlG-pnQ/l.jpg"], ["likes", 1], ["location_id", 13], ["created_at", "2020-12-04 21:57:14.968541"], ["updated_at", "2020-12-04 21:57:14.968541"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Excuse My French"], ["cuisine", "French"], ["style", "Bars, Tapas Bars, French"], ["phone_number", "(212) 780-9600"], ["menu", "https://www.excusemyfrench-nyc.com/copy-of-food-1"], ["address", "96 Orchard St, New York, NY 10002"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/VlKFsXO_TqOorH5sMWREWQ/o.jpg"], ["likes", 2], ["location_id", 4], ["created_at", "2020-12-04 21:57:14.975401"], ["updated_at", "2020-12-04 21:57:14.975401"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Blue Ribbon Brasserie"], ["cuisine", "American"], ["style", "American (Traditional), Cocktail Bars"], ["phone_number", "(212) 274-0404"], ["menu", "https://www.blueribbonrestaurants.com/restaurants/blue-ribbon-brasserie"], ["address", "97 Sullivan St, New York, NY 10012"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/OMYqqgQ-ioT7bCP82xvJDA/o.jpg"], ["likes", 0], ["location_id", 3], ["created_at", "2020-12-04 21:57:14.980692"], ["updated_at", "2020-12-04 21:57:14.980692"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_locations"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_restaurants"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201203193858)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201203015942);
+
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-04 21:57:23.228232"], ["updated_at", "2020-12-04 21:57:23.228232"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "abb986dde58f827c0ed942233ca181dd32620c64"], ["created_at", "2020-12-04 21:57:23.237216"], ["updated_at", "2020-12-04 21:57:23.237216"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_locations"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_restaurants"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201203193858)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201203015942);
+
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-04 21:57:23.262764"], ["updated_at", "2020-12-04 21:57:23.262764"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-12-04 21:57:23.268556"], ["key", "environment"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "abb986dde58f827c0ed942233ca181dd32620c64"], ["created_at", "2020-12-04 21:57:23.274274"], ["updated_at", "2020-12-04 21:57:23.274274"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "West Village"], ["image", "https://image.newyork.com.au/wp-content/uploads/2010/05/West-Village-New-York.jpeg"], ["created_at", "2020-12-04 21:57:23.298617"], ["updated_at", "2020-12-04 21:57:23.298617"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "East Village"], ["image", "https://upload.wikimedia.org/wikipedia/commons/d/d9/East_Village_Second_Avenue.jpg"], ["created_at", "2020-12-04 21:57:23.303856"], ["updated_at", "2020-12-04 21:57:23.303856"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Soho"], ["image", "https://upload.wikimedia.org/wikipedia/commons/9/9e/NYC_SoHo_Green_Street.jpg"], ["created_at", "2020-12-04 21:57:23.308045"], ["updated_at", "2020-12-04 21:57:23.308045"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Lower East Side"], ["image", "https://media-cdn.tripadvisor.com/media/photo-s/0c/bc/16/f9/murales-al-lower-east.jpg"], ["created_at", "2020-12-04 21:57:23.312478"], ["updated_at", "2020-12-04 21:57:23.312478"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Lower West Side"], ["image", "https://lh3.googleusercontent.com/proxy/7XyDhO2-ic2lYC-88I26POocEJJaGMw3XfwEzYULmgWYqvSO4cUGtsyPiemMmUFKdY-JO_t06XLvfTJPqEjIcQKZy06pfD7hMNy2QxZRstcW6OQcBcCC09sNI14GS4IdTl-gpodYpR3VHztZzQ"], ["created_at", "2020-12-04 21:57:23.316790"], ["updated_at", "2020-12-04 21:57:23.316790"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.7ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Chelsea"], ["image", "https://media.timeout.com/images/105160348/image.jpg"], ["created_at", "2020-12-04 21:57:23.320848"], ["updated_at", "2020-12-04 21:57:23.320848"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Hell's Kitchen"], ["image", "https://media.timeout.com/images/105259656/630/472/image.jpg"], ["created_at", "2020-12-04 21:57:23.343271"], ["updated_at", "2020-12-04 21:57:23.343271"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Tribeca"], ["image", "https://i.pinimg.com/originals/88/ae/eb/88aeebed9e2f733de2fbde7f34e3f7f4.jpg"], ["created_at", "2020-12-04 21:57:23.347313"], ["updated_at", "2020-12-04 21:57:23.347313"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Greenwich Village"], ["image", "https://www.tripsavvy.com/thmb/MyeXgbO5Vx60sQOqwzivFBpEM1c=/3956x2225/smart/filters:no_upscale()/greenwich-village-street-scene-537559314-5c2d29a3c9e77c0001709e1e.jpg"], ["created_at", "2020-12-04 21:57:23.351269"], ["updated_at", "2020-12-04 21:57:23.351269"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Park Slope"], ["image", "https://media.timeout.com/images/103429959/630/472/image.jpg"], ["created_at", "2020-12-04 21:57:23.355503"], ["updated_at", "2020-12-04 21:57:23.355503"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Flatiron"], ["image", "https://i1.wp.com/nypost.com/wp-content/uploads/sites/2/2017/07/macmillan-leaving-flatiron.jpg?quality=80&strip=all&ssl=1"], ["created_at", "2020-12-04 21:57:23.359665"], ["updated_at", "2020-12-04 21:57:23.359665"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Midtown East"], ["image", "https://images.squarespace-cdn.com/content/v1/5441c56de4b0f7692c6f6c2f/1432669250345-QGGBK39334G4MZSHJQ3J/ke17ZwdGBToddI8pDm48kAGx3IFADtt9koaOuly55F57gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0pTKqSDRwmMK43IUI3HojJX_iGOyvGz0VEAhzFdMwNTUP3iYIRpjRWHZRVGJwIQ0nA/midtown-east-9+-+Copy.jpg"], ["created_at", "2020-12-04 21:57:23.363389"], ["updated_at", "2020-12-04 21:57:23.363389"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Midtown West"], ["image", "https://static.travelweekly.com/i/sized/780/437/www.cfmedia.vfmleonardo.com/imageRepo/6/0/99/449/38/nycmf-exterior-1298-hor-clsc_O.jpg"], ["created_at", "2020-12-04 21:57:23.367599"], ["updated_at", "2020-12-04 21:57:23.367599"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Meatpacking District"], ["image", "https://newyorkyimby.com/wp-content/uploads/2020/05/View-from-9th-Avenue-and-West-14th-Street-of-proposed-restorations-and-addition.jpg"], ["created_at", "2020-12-04 21:57:23.371324"], ["updated_at", "2020-12-04 21:57:23.371324"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Financial District"], ["image", "https://www.duanestreethotel.com/wp-content/uploads/2017/04/GettyImages-641176590.jpg"], ["created_at", "2020-12-04 21:57:23.374985"], ["updated_at", "2020-12-04 21:57:23.374985"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Theater District"], ["image", "https://www.thetravelteam.com/wp-content/uploads/2018/12/nyc-theatre-district-to-do.jpg"], ["created_at", "2020-12-04 21:57:23.378831"], ["updated_at", "2020-12-04 21:57:23.378831"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Astoria"], ["image", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Astoriaqueens33rdand31st.jpg/1200px-Astoriaqueens33rdand31st.jpg"], ["created_at", "2020-12-04 21:57:23.382676"], ["updated_at", "2020-12-04 21:57:23.382676"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Bushwich"], ["image", "https://www.cubesmart.com/blog/wp-content/uploads/Bushwick-Collective-Mural-Brooklyn-New-York-8.jpg"], ["created_at", "2020-12-04 21:57:23.386451"], ["updated_at", "2020-12-04 21:57:23.386451"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Williamsburgh"], ["image", "https://www.tripsavvy.com/thmb/uU7_xCAmrA1HXVvmOpngDjhq3jk=/3435x2576/smart/filters:no_upscale()/south-williamsburg-streetscape--brooklyn-567893317-5ad92d2aa474be0036f506a3.jpg"], ["created_at", "2020-12-04 21:57:23.390529"], ["updated_at", "2020-12-04 21:57:23.390529"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bonnie's Grill"], ["cuisine", "American"], ["style", "Hot & Spicy Regional American Cuisine"], ["phone_number", "(718) 369-9527"], ["menu", "https://www.eatatbonnies.com/menu"], ["address", "278 5th Ave, Brooklyn, NY 11215"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/hJKYzCF0t95zlFMtyzneQg/l.jpg"], ["likes", 5], ["location_id", 10], ["created_at", "2020-12-04 21:57:23.416017"], ["updated_at", "2020-12-04 21:57:23.416017"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gramercy Tavern"], ["cuisine", "American(New)"], ["style", "Danny Meyer's Flatiron District tavern "], ["phone_number", "(212) 477-0777"], ["menu", "https://www.gramercytavern.com/gramercy-tavern-menu/"], ["address", "42 E 20th St, New York, NY 10003"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/MgfPMoFNmjIWcrMxTZbsvw/l.jpg"], ["likes", 8], ["location_id", 11], ["created_at", "2020-12-04 21:57:23.423930"], ["updated_at", "2020-12-04 21:57:23.423930"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Catch NYC"], ["cuisine", "Asian"], ["style", "Asian Fusion, Sushi Bars, Seafood"], ["phone_number", "(212) 392-5978"], ["menu", "https://catchrestaurants.com/catchnyc/#menu"], ["address", "21 9th Ave, New York, NY 10014"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/NBWlgWmKUEaE-k0CF9b5wg/l.jpg"], ["likes", 3], ["location_id", 14], ["created_at", "2020-12-04 21:57:23.434176"], ["updated_at", "2020-12-04 21:57:23.434176"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.3ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "La Loteria"], ["cuisine", "Mexican"], ["style", "Imaginative twists on Mexican dishes, plus cocktails, presented in a modern, convivial setting."], ["phone_number", "(212) 858-9096"], ["menu", "http://www.laloterianyc.com/menus/"], ["address", "29 7th Ave S, New York, NY 10014"], ["image", "https://images.squarespace-cdn.com/content/v1/546f8abce4b08b01e3cfaa4b/1421176275576-1I0F3UJK8CK3APXMXKMV/ke17ZwdGBToddI8pDm48kKCzQu6R4BT5zqRe40olNKZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTm8gdG5xRTtrVVyLXkddLwchyHhFWTGlN3cUNTMki5PNY1TGRehHG5SCVISp4ZVDSB/IMG_3616.jpg?format=500w"], ["likes", 4], ["location_id", 1], ["created_at", "2020-12-04 21:57:23.443543"], ["updated_at", "2020-12-04 21:57:23.443543"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hortus NYC"], ["cuisine", "Korean"], ["style", "Asian Fusion, Korean, Tapas/Small Plates"], ["phone_number", "(646) 858-3784"], ["menu", "https://www.hortusnyc.com/menu/"], ["address", "271 5th Ave, New York, NY 10016"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/xTBJX2kp5dr69chHlG-pnQ/l.jpg"], ["likes", 1], ["location_id", 13], ["created_at", "2020-12-04 21:57:23.450961"], ["updated_at", "2020-12-04 21:57:23.450961"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Excuse My French"], ["cuisine", "French"], ["style", "Bars, Tapas Bars, French"], ["phone_number", "(212) 780-9600"], ["menu", "https://www.excusemyfrench-nyc.com/copy-of-food-1"], ["address", "96 Orchard St, New York, NY 10002"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/VlKFsXO_TqOorH5sMWREWQ/o.jpg"], ["likes", 2], ["location_id", 4], ["created_at", "2020-12-04 21:57:23.459845"], ["updated_at", "2020-12-04 21:57:23.459845"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Blue Ribbon Brasserie"], ["cuisine", "American"], ["style", "American (Traditional), Cocktail Bars"], ["phone_number", "(212) 274-0404"], ["menu", "https://www.blueribbonrestaurants.com/restaurants/blue-ribbon-brasserie"], ["address", "97 Sullivan St, New York, NY 10012"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/OMYqqgQ-ioT7bCP82xvJDA/o.jpg"], ["likes", 0], ["location_id", 3], ["created_at", "2020-12-04 21:57:23.480194"], ["updated_at", "2020-12-04 21:57:23.480194"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mApi::V1::Location Load (0.3ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" ORDER BY "api_v1_locations"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_locations"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_restaurants"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201203193858)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201203015942);
+
+[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-04 22:05:54.817939"], ["updated_at", "2020-12-04 22:05:54.817939"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "abb986dde58f827c0ed942233ca181dd32620c64"], ["created_at", "2020-12-04 22:05:54.825514"], ["updated_at", "2020-12-04 22:05:54.825514"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_locations"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_restaurants"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201203193858)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201203015942);
+
+[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-04 22:05:54.849024"], ["updated_at", "2020-12-04 22:05:54.849024"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-12-04 22:05:54.854307"], ["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "abb986dde58f827c0ed942233ca181dd32620c64"], ["created_at", "2020-12-04 22:05:54.859881"], ["updated_at", "2020-12-04 22:05:54.859881"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "West Village"], ["image", "https://image.newyork.com.au/wp-content/uploads/2010/05/West-Village-New-York.jpeg"], ["created_at", "2020-12-04 22:05:54.883033"], ["updated_at", "2020-12-04 22:05:54.883033"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "East Village"], ["image", "https://upload.wikimedia.org/wikipedia/commons/d/d9/East_Village_Second_Avenue.jpg"], ["created_at", "2020-12-04 22:05:54.889035"], ["updated_at", "2020-12-04 22:05:54.889035"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Soho"], ["image", "https://upload.wikimedia.org/wikipedia/commons/9/9e/NYC_SoHo_Green_Street.jpg"], ["created_at", "2020-12-04 22:05:54.893429"], ["updated_at", "2020-12-04 22:05:54.893429"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Lower East Side"], ["image", "https://media-cdn.tripadvisor.com/media/photo-s/0c/bc/16/f9/murales-al-lower-east.jpg"], ["created_at", "2020-12-04 22:05:54.900865"], ["updated_at", "2020-12-04 22:05:54.900865"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Lower West Side"], ["image", "https://lh3.googleusercontent.com/proxy/7XyDhO2-ic2lYC-88I26POocEJJaGMw3XfwEzYULmgWYqvSO4cUGtsyPiemMmUFKdY-JO_t06XLvfTJPqEjIcQKZy06pfD7hMNy2QxZRstcW6OQcBcCC09sNI14GS4IdTl-gpodYpR3VHztZzQ"], ["created_at", "2020-12-04 22:05:54.905879"], ["updated_at", "2020-12-04 22:05:54.905879"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Chelsea"], ["image", "https://media.timeout.com/images/105160348/image.jpg"], ["created_at", "2020-12-04 22:05:54.910985"], ["updated_at", "2020-12-04 22:05:54.910985"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Hell's Kitchen"], ["image", "https://media.timeout.com/images/105259656/630/472/image.jpg"], ["created_at", "2020-12-04 22:05:54.933528"], ["updated_at", "2020-12-04 22:05:54.933528"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Tribeca"], ["image", "https://i.pinimg.com/originals/88/ae/eb/88aeebed9e2f733de2fbde7f34e3f7f4.jpg"], ["created_at", "2020-12-04 22:05:54.939079"], ["updated_at", "2020-12-04 22:05:54.939079"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Greenwich Village"], ["image", "https://www.tripsavvy.com/thmb/MyeXgbO5Vx60sQOqwzivFBpEM1c=/3956x2225/smart/filters:no_upscale()/greenwich-village-street-scene-537559314-5c2d29a3c9e77c0001709e1e.jpg"], ["created_at", "2020-12-04 22:05:54.944352"], ["updated_at", "2020-12-04 22:05:54.944352"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Park Slope"], ["image", "https://media.timeout.com/images/103429959/630/472/image.jpg"], ["created_at", "2020-12-04 22:05:54.948657"], ["updated_at", "2020-12-04 22:05:54.948657"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Flatiron"], ["image", "https://i1.wp.com/nypost.com/wp-content/uploads/sites/2/2017/07/macmillan-leaving-flatiron.jpg?quality=80&strip=all&ssl=1"], ["created_at", "2020-12-04 22:05:54.953696"], ["updated_at", "2020-12-04 22:05:54.953696"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.6ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Midtown East"], ["image", "https://images.squarespace-cdn.com/content/v1/5441c56de4b0f7692c6f6c2f/1432669250345-QGGBK39334G4MZSHJQ3J/ke17ZwdGBToddI8pDm48kAGx3IFADtt9koaOuly55F57gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0pTKqSDRwmMK43IUI3HojJX_iGOyvGz0VEAhzFdMwNTUP3iYIRpjRWHZRVGJwIQ0nA/midtown-east-9+-+Copy.jpg"], ["created_at", "2020-12-04 22:05:54.959028"], ["updated_at", "2020-12-04 22:05:54.959028"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.6ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Midtown West"], ["image", "https://static.travelweekly.com/i/sized/780/437/www.cfmedia.vfmleonardo.com/imageRepo/6/0/99/449/38/nycmf-exterior-1298-hor-clsc_O.jpg"], ["created_at", "2020-12-04 22:05:54.965038"], ["updated_at", "2020-12-04 22:05:54.965038"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Meatpacking District"], ["image", "https://newyorkyimby.com/wp-content/uploads/2020/05/View-from-9th-Avenue-and-West-14th-Street-of-proposed-restorations-and-addition.jpg"], ["created_at", "2020-12-04 22:05:54.972671"], ["updated_at", "2020-12-04 22:05:54.972671"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.9ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Financial District"], ["image", "https://www.duanestreethotel.com/wp-content/uploads/2017/04/GettyImages-641176590.jpg"], ["created_at", "2020-12-04 22:05:54.980754"], ["updated_at", "2020-12-04 22:05:54.980754"]]
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.8ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Theater District"], ["image", "https://www.thetravelteam.com/wp-content/uploads/2018/12/nyc-theatre-district-to-do.jpg"], ["created_at", "2020-12-04 22:05:54.994574"], ["updated_at", "2020-12-04 22:05:54.994574"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.7ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Astoria"], ["image", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Astoriaqueens33rdand31st.jpg/1200px-Astoriaqueens33rdand31st.jpg"], ["created_at", "2020-12-04 22:05:55.010141"], ["updated_at", "2020-12-04 22:05:55.010141"]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.6ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Bushwich"], ["image", "https://www.cubesmart.com/blog/wp-content/uploads/Bushwick-Collective-Mural-Brooklyn-New-York-8.jpg"], ["created_at", "2020-12-04 22:05:55.030720"], ["updated_at", "2020-12-04 22:05:55.030720"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Williamsburgh"], ["image", "https://www.tripsavvy.com/thmb/uU7_xCAmrA1HXVvmOpngDjhq3jk=/3435x2576/smart/filters:no_upscale()/south-williamsburg-streetscape--brooklyn-567893317-5ad92d2aa474be0036f506a3.jpg"], ["created_at", "2020-12-04 22:05:55.056833"], ["updated_at", "2020-12-04 22:05:55.056833"]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.3ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.6ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bonnie's Grill"], ["cuisine", "American"], ["style", "Hot & Spicy Regional American Cuisine"], ["phone_number", "(718) 369-9527"], ["menu", "https://www.eatatbonnies.com/menu"], ["address", "278 5th Ave, Brooklyn, NY 11215"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/hJKYzCF0t95zlFMtyzneQg/l.jpg"], ["likes", 5], ["location_id", 10], ["created_at", "2020-12-04 22:05:55.102149"], ["updated_at", "2020-12-04 22:05:55.102149"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.7ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gramercy Tavern"], ["cuisine", "American(New)"], ["style", "Danny Meyer's Flatiron District tavern "], ["phone_number", "(212) 477-0777"], ["menu", "https://www.gramercytavern.com/gramercy-tavern-menu/"], ["address", "42 E 20th St, New York, NY 10003"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/MgfPMoFNmjIWcrMxTZbsvw/l.jpg"], ["likes", 8], ["location_id", 11], ["created_at", "2020-12-04 22:05:55.116755"], ["updated_at", "2020-12-04 22:05:55.116755"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.6ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Catch NYC"], ["cuisine", "Asian"], ["style", "Asian Fusion, Sushi Bars, Seafood"], ["phone_number", "(212) 392-5978"], ["menu", "https://catchrestaurants.com/catchnyc/#menu"], ["address", "21 9th Ave, New York, NY 10014"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/NBWlgWmKUEaE-k0CF9b5wg/l.jpg"], ["likes", 3], ["location_id", 14], ["created_at", "2020-12-04 22:05:55.130992"], ["updated_at", "2020-12-04 22:05:55.130992"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.6ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "La Loteria"], ["cuisine", "Mexican"], ["style", "Imaginative twists on Mexican dishes, plus cocktails, presented in a modern, convivial setting."], ["phone_number", "(212) 858-9096"], ["menu", "http://www.laloterianyc.com/menus/"], ["address", "29 7th Ave S, New York, NY 10014"], ["image", "https://images.squarespace-cdn.com/content/v1/546f8abce4b08b01e3cfaa4b/1421176275576-1I0F3UJK8CK3APXMXKMV/ke17ZwdGBToddI8pDm48kKCzQu6R4BT5zqRe40olNKZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTm8gdG5xRTtrVVyLXkddLwchyHhFWTGlN3cUNTMki5PNY1TGRehHG5SCVISp4ZVDSB/IMG_3616.jpg?format=500w"], ["likes", 4], ["location_id", 1], ["created_at", "2020-12-04 22:05:55.166389"], ["updated_at", "2020-12-04 22:05:55.166389"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.6ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hortus NYC"], ["cuisine", "Korean"], ["style", "Asian Fusion, Korean, Tapas/Small Plates"], ["phone_number", "(646) 858-3784"], ["menu", "https://www.hortusnyc.com/menu/"], ["address", "271 5th Ave, New York, NY 10016"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/xTBJX2kp5dr69chHlG-pnQ/l.jpg"], ["likes", 1], ["location_id", 13], ["created_at", "2020-12-04 22:05:55.201300"], ["updated_at", "2020-12-04 22:05:55.201300"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Excuse My French"], ["cuisine", "French"], ["style", "Bars, Tapas Bars, French"], ["phone_number", "(212) 780-9600"], ["menu", "https://www.excusemyfrench-nyc.com/copy-of-food-1"], ["address", "96 Orchard St, New York, NY 10002"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/VlKFsXO_TqOorH5sMWREWQ/o.jpg"], ["likes", 2], ["location_id", 4], ["created_at", "2020-12-04 22:05:55.211556"], ["updated_at", "2020-12-04 22:05:55.211556"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Blue Ribbon Brasserie"], ["cuisine", "American"], ["style", "American (Traditional), Cocktail Bars"], ["phone_number", "(212) 274-0404"], ["menu", "https://www.blueribbonrestaurants.com/restaurants/blue-ribbon-brasserie"], ["address", "97 Sullivan St, New York, NY 10012"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/OMYqqgQ-ioT7bCP82xvJDA/o.jpg"], ["likes", 0], ["location_id", 3], ["created_at", "2020-12-04 22:05:55.220880"], ["updated_at", "2020-12-04 22:05:55.220880"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mApi::V1::Location Load (0.4ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" ORDER BY "api_v1_locations"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/api/v1/locations" for ::1 at 2020-12-04 17:06:54 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.4ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 16ms (Views: 11.2ms | ActiveRecord: 1.3ms | Allocations: 7761)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-05 14:00:37 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.4ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 23ms (Views: 14.8ms | ActiveRecord: 1.1ms | Allocations: 7761)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-05 14:16:16 -0500
+  [1m[35m (17.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (3.5ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 43ms (Views: 20.6ms | ActiveRecord: 3.5ms | Allocations: 2860)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-05 14:16:59 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.3ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.3ms | Allocations: 2848)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-05 14:20:06 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.8ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 64ms (Views: 26.7ms | ActiveRecord: 0.8ms | Allocations: 2848)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-05 14:20:26 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.6ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.6ms | Allocations: 2848)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-05 14:20:34 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.2ms | Allocations: 2831)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-05 14:23:35 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (5.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 34ms (Views: 23.0ms | ActiveRecord: 5.1ms | Allocations: 2831)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-05 14:28:13 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (1.4ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 24ms (Views: 18.6ms | ActiveRecord: 1.4ms | Allocations: 2831)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-05 14:33:51 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (2.9ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 22ms (Views: 18.4ms | ActiveRecord: 2.9ms | Allocations: 2849)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-05 14:34:03 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.2ms | Allocations: 2831)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-05 14:35:04 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.4ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.4ms | Allocations: 2831)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-05 14:36:08 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.2ms | Allocations: 2831)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-05 14:36:44 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.3ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.3ms | Allocations: 2831)
+
+
