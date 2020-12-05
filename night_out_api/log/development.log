@@ -3539,3 +3539,496 @@ Processing by Api::V1::LocationsController#index as */*
 Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.3ms | Allocations: 2831)
 
 
+Started GET "//api/v1/restaurants" for ::1 at 2020-12-05 15:21:15 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::RestaurantsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 630)
+
+
+  
+NoMethodError (undefined method `id' for :location:Symbol):
+  
+app/controllers/api/v1/restaurants_controller.rb:4:in `index'
+Started GET "//api/v1/restaurants" for ::1 at 2020-12-05 15:21:53 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::RestaurantsController#index as HTML
+  [1m[36mApi::V1::Restaurant Load (0.4ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants"[0m
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `index'
+Completed 200 OK in 25ms (Views: 16.0ms | ActiveRecord: 1.2ms | Allocations: 11852)
+
+
+Started GET "//api/v1/restaurants/1" for ::1 at 2020-12-05 15:22:01 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for Api::V1::RestaurantsController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "//api/v1/" for ::1 at 2020-12-05 15:22:13 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "//api/v1/locations" for ::1 at 2020-12-05 15:24:06 -0500
+Processing by Api::V1::LocationsController#index as HTML
+  [1m[36mApi::V1::Location Load (1.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 28ms (Views: 18.4ms | ActiveRecord: 2.3ms | Allocations: 7177)
+
+
+Started GET "//api/v1/locations/id.1" for ::1 at 2020-12-05 15:24:15 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for Api::V1::LocationsController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "//api/v1/locations/1" for ::1 at 2020-12-05 15:24:22 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for Api::V1::LocationsController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "//api/v1/restaurants/1" for ::1 at 2020-12-05 15:26:08 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApi::V1::Restaurant Load (1.1ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `show'
+Completed 204 No Content in 33ms (ActiveRecord: 3.3ms | Allocations: 9688)
+
+
+Started GET "//api/v1/restaurants" for ::1 at 2020-12-05 15:27:20 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::RestaurantsController#index as HTML
+  [1m[36mApi::V1::Restaurant Load (0.6ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants"[0m
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `index'
+Completed 200 OK in 40ms (Views: 33.7ms | ActiveRecord: 1.9ms | Allocations: 10893)
+
+
+Started GET "//api/v1/restaurants/1" for ::1 at 2020-12-05 15:27:29 -0500
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApi::V1::Restaurant Load (0.5ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 1011)
+
+
+Started GET "//api/v1/restaurants/3" for ::1 at 2020-12-05 15:27:40 -0500
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:13:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 802)
+
+
+Started GET "//api/v1/restaurants/1" for ::1 at 2020-12-05 15:33:25 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/Philip/Desktop/FlatIron/Projects/javascript_rails_project/night_out_api/app/controllers/api/v1/restaurants_controller.rb:17: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/restaurants_controller.rb:17: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/restaurants_controller.rb:17: syntax error, unexpected end-of-input, expecting end
+Started GET "//api/v1/restaurants/10" for ::1 at 2020-12-05 15:33:31 -0500
+  
+SyntaxError (/Users/Philip/Desktop/FlatIron/Projects/javascript_rails_project/night_out_api/app/controllers/api/v1/restaurants_controller.rb:17: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/restaurants_controller.rb:17: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/restaurants_controller.rb:17: syntax error, unexpected end-of-input, expecting end
+Started GET "//api/v1/restaurants/10" for ::1 at 2020-12-05 15:33:54 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mApi::V1::Restaurant Load (0.5ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE (10)[0m
+  ↳ app/controllers/api/v1/restaurants_controller.rb:15:in `show'
+Completed 200 OK in 25ms (Views: 20.2ms | ActiveRecord: 1.8ms | Allocations: 10930)
+
+
+Started GET "//api/v1/restaurants/10" for ::1 at 2020-12-05 15:38:25 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"id"=>"10"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1030)
+
+
+  
+NoMethodError (undefined method `id=' for nil:NilClass):
+  
+app/controllers/api/v1/restaurants_controller.rb:10:in `show'
+Started GET "//api/v1/restaurants/10" for ::1 at 2020-12-05 15:38:44 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mApi::V1::Restaurant Load (0.6ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE (10)[0m
+  ↳ app/controllers/api/v1/restaurants_controller.rb:15:in `show'
+Completed 200 OK in 33ms (Views: 28.9ms | ActiveRecord: 2.3ms | Allocations: 10950)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mApi::V1::Restaurant Load (0.5ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mApi::V1::Restaurant Load (0.6ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.5ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mApi::V1::Restaurant Load (0.4ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mApi::V1::Restaurant Load (1.1ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ? LIMIT ?[0m  [["location_id", 10], ["LIMIT", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ? LIMIT ?[0m  [["location_id", 10], ["LIMIT", 11]]
+Started GET "//api/v1/restaurants/10" for ::1 at 2020-12-05 15:54:13 -0500
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mApi::V1::Restaurant Load (0.5ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 10]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:15:in `show'
+Completed 200 OK in 290ms (Views: 172.8ms | ActiveRecord: 18.8ms | Allocations: 10822)
+
+
+Started GET "//api/v1/restaurants/10" for ::1 at 2020-12-05 15:55:50 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mApi::V1::Restaurant Load (0.6ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 10]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:15:in `show'
+Completed 200 OK in 23ms (Views: 14.2ms | ActiveRecord: 1.8ms | Allocations: 9891)
+
+
+Started GET "//api/v1/restaurants/10" for ::1 at 2020-12-05 15:56:07 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mApi::V1::Restaurant Load (2.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 10]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:15:in `show'
+Completed 200 OK in 119ms (Views: 110.4ms | ActiveRecord: 3.6ms | Allocations: 9696)
+
+
+Started GET "//api/v1/restaurants/1" for ::1 at 2020-12-05 15:56:15 -0500
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:15:in `show'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1063)
+
+
+Started GET "//api/v1/restaurants/11" for ::1 at 2020-12-05 15:56:17 -0500
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 11]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:15:in `show'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 1081)
+
+
+Started GET "//api/v1/restaurants/34" for ::1 at 2020-12-05 15:56:30 -0500
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 34]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:15:in `show'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 858)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mApi::V1::Restaurant Load (0.4ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.5ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.4ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.4ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants"[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mApi::V1::Restaurant Load (0.5ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.3ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.7ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants"[0m
+  [1m[36mApi::V1::Restaurant Load (0.3ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ? LIMIT ?[0m  [["location_id", 1], ["LIMIT", 11]]
+  [1m[36mApi::V1::Location Load (0.7ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  [1m[36mApi::V1::Location Load (0.3ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mApi::V1::Location Load (0.3ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 11]]
+  [1m[36mApi::V1::Location Load (0.3ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  [1m[36mApi::V1::Location Load (0.5ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 11]]
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 11]]
+  [1m[36mApi::V1::Location Load (0.6ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mApi::V1::Location Load (0.4ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  [1m[36mApi::V1::Location Load (0.3ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mApi::V1::Location Load (0.4ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mApi::V1::Location Load (0.5ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+Started GET "//api/v1/restaurants/34" for ::1 at 2020-12-05 16:35:01 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/Philip/Desktop/FlatIron/Projects/javascript_rails_project/night_out_api/app/controllers/api/v1/restaurants_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting then or ';' or '\n'
+... &&  location.include? location[params[:id]]
+...                       ^~~~~~~~
+/Users/Philip/Desktop/FlatIron/Projects/javascript_rails_project/night_out_api/app/controllers/api/v1/restaurants_controller.rb:12: else without rescue is useless
+        else
+        ^~~~
+/Users/Philip/Desktop/FlatIron/Projects/javascript_rails_project/night_out_api/app/controllers/api/v1/restaurants_controller.rb:18: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/api/v1/restaurants_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting then or ';' or '\n'
+app/controllers/api/v1/restaurants_controller.rb:12: else without rescue is useless
+app/controllers/api/v1/restaurants_controller.rb:18: syntax error, unexpected end, expecting end-of-input
+app/controllers/api/v1/restaurants_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting then or ';' or '\n'
+app/controllers/api/v1/restaurants_controller.rb:12: else without rescue is useless
+app/controllers/api/v1/restaurants_controller.rb:18: syntax error, unexpected end, expecting end-of-input
+Started GET "//api/v1/restaurants/1" for ::1 at 2020-12-05 16:35:22 -0500
+  
+SyntaxError (/Users/Philip/Desktop/FlatIron/Projects/javascript_rails_project/night_out_api/app/controllers/api/v1/restaurants_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting then or ';' or '\n'
+... &&  location.include? location[params[:id]]
+...                       ^~~~~~~~
+/Users/Philip/Desktop/FlatIron/Projects/javascript_rails_project/night_out_api/app/controllers/api/v1/restaurants_controller.rb:12: else without rescue is useless
+        else
+        ^~~~
+/Users/Philip/Desktop/FlatIron/Projects/javascript_rails_project/night_out_api/app/controllers/api/v1/restaurants_controller.rb:18: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/api/v1/restaurants_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting then or ';' or '\n'
+app/controllers/api/v1/restaurants_controller.rb:12: else without rescue is useless
+app/controllers/api/v1/restaurants_controller.rb:18: syntax error, unexpected end, expecting end-of-input
+app/controllers/api/v1/restaurants_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting then or ';' or '\n'
+app/controllers/api/v1/restaurants_controller.rb:12: else without rescue is useless
+app/controllers/api/v1/restaurants_controller.rb:18: syntax error, unexpected end, expecting end-of-input
+Started GET "//api/v1/restaurants/1" for ::1 at 2020-12-05 16:36:42 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApi::V1::Location Load (0.6ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/restaurants_controller.rb:10:in `show'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.1ms | Allocations: 5858)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/api/v1/restaurants_controller.rb:10:in `show'
+Started GET "//api/v1/restaurants/1" for ::1 at 2020-12-05 16:37:12 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/Philip/Desktop/FlatIron/Projects/javascript_rails_project/night_out_api/app/controllers/api/v1/restaurants_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting then or ';' or '\n'
+...] && location.include? location[params[:id]]
+...                       ^~~~~~~~
+/Users/Philip/Desktop/FlatIron/Projects/javascript_rails_project/night_out_api/app/controllers/api/v1/restaurants_controller.rb:12: else without rescue is useless
+        else
+        ^~~~
+/Users/Philip/Desktop/FlatIron/Projects/javascript_rails_project/night_out_api/app/controllers/api/v1/restaurants_controller.rb:18: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/api/v1/restaurants_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting then or ';' or '\n'
+app/controllers/api/v1/restaurants_controller.rb:12: else without rescue is useless
+app/controllers/api/v1/restaurants_controller.rb:18: syntax error, unexpected end, expecting end-of-input
+app/controllers/api/v1/restaurants_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting then or ';' or '\n'
+app/controllers/api/v1/restaurants_controller.rb:12: else without rescue is useless
+app/controllers/api/v1/restaurants_controller.rb:18: syntax error, unexpected end, expecting end-of-input
+Started GET "//api/v1/restaurants/1" for ::1 at 2020-12-05 16:40:11 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApi::V1::Restaurant Load (1.3ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 23ms (Views: 16.1ms | ActiveRecord: 1.9ms | Allocations: 10645)
+
+
+Started GET "//api/v1/restaurants/2" for ::1 at 2020-12-05 16:40:35 -0500
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 2]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 876)
+
+
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mApi::V1::Restaurant Load (0.5ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.3ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.4ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.5ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants"[0m
+  [1m[36mApi::V1::Restaurant Load (0.5ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ? LIMIT ?[0m  [["location_id", 11], ["LIMIT", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.4ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ? LIMIT ?[0m  [["location_id", 11], ["LIMIT", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.4ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ? LIMIT ?[0m  [["location_id", 11], ["LIMIT", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.3ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ? LIMIT ?[0m  [["location_id", 11], ["LIMIT", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.6ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ? LIMIT ?[0m  [["location_id", 11], ["LIMIT", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.6ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.3ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ? LIMIT ?[0m  [["location_id", 11], ["LIMIT", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.4ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.1ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.3ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 11]]
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 11]]
+Started GET "//api/v1/restaurants/2" for ::1 at 2020-12-05 17:05:10 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mApi::V1::Restaurant Load (0.4ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 2]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants"[0m
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 26ms (Views: 16.1ms | ActiveRecord: 2.2ms | Allocations: 12634)
+
+
+Started GET "//api/v1/restaurants/11" for ::1 at 2020-12-05 17:05:31 -0500
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 11]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mCACHE Api::V1::Restaurant Load (0.0ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 11]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 1648)
+
+
+Started GET "//api/v1/restaurants" for ::1 at 2020-12-05 17:05:42 -0500
+Processing by Api::V1::RestaurantsController#index as HTML
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants"[0m
+  ↳ app/controllers/api/v1/restaurants_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 2247)
+
+
+Started GET "//api/v1/restaurants/1" for ::1 at 2020-12-05 17:06:32 -0500
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mCACHE Api::V1::Restaurant Load (0.0ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 1647)
+
+
+Started GET "//api/v1/restaurants/56" for ::1 at 2020-12-05 17:06:40 -0500
+Processing by Api::V1::RestaurantsController#show as HTML
+  Parameters: {"id"=>"56"}
+  [1m[36mApi::V1::Restaurant Load (0.1ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 56]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mApi::V1::Restaurant Load (0.3ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants"[0m
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.4ms | Allocations: 2852)
+
+
