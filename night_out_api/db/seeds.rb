@@ -30,7 +30,7 @@ locations =  [
     {
       "id": 5,
       "neighborhood": "Lower West Side",
-      "image": "https://lh3.googleusercontent.com/proxy/7XyDhO2-ic2lYC-88I26POocEJJaGMw3XfwEzYULmgWYqvSO4cUGtsyPiemMmUFKdY-JO_t06XLvfTJPqEjIcQKZy06pfD7hMNy2QxZRstcW6OQcBcCC09sNI14GS4IdTl-gpodYpR3VHztZzQ"
+      "image": "https://nikkilongphotography.files.wordpress.com/2014/05/infinate-streets-ny.jpg"
     },
     {
       "id": 6,
