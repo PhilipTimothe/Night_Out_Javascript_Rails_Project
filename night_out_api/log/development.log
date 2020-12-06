@@ -7224,3 +7224,619 @@ Processing by Api::V1::LocationsController#index as */*
 Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.3ms | Allocations: 2831)
 
 
+Started GET "/api/v1/locations" for ::1 at 2020-12-06 17:10:30 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.5ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 17ms (Views: 8.4ms | ActiveRecord: 1.1ms | Allocations: 7761)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateApiV1Comments (20201206225249)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "api_v1_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "comment" varchar, "rating" integer, "restaurant_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201206225249"]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_comments"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "api_v1_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "comment" varchar, "rating" integer, "restaurant_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_locations"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_restaurants"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201206225249)[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201203015942),
+(20201203193858);
+
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-06 23:09:30.446418"], ["updated_at", "2020-12-06 23:09:30.446418"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "1d8a77c1574a3da60a401c612607efce27dcfbe0"], ["created_at", "2020-12-06 23:09:30.453851"], ["updated_at", "2020-12-06 23:09:30.453851"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_comments"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "api_v1_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "comment" varchar, "rating" integer, "restaurant_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_locations"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_restaurants"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201206225249)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201203015942),
+(20201203193858);
+
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-06 23:09:30.481619"], ["updated_at", "2020-12-06 23:09:30.481619"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-12-06 23:09:30.487384"], ["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "1d8a77c1574a3da60a401c612607efce27dcfbe0"], ["created_at", "2020-12-06 23:09:30.493000"], ["updated_at", "2020-12-06 23:09:30.493000"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateApiV1Comments (20201206225249)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "api_v1_comments"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20201206225249"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateApiV1Locations (20201203193858)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "api_v1_locations"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20201203193858"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateApiV1Restaurants (20201203015942)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "api_v1_restaurants"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20201203015942"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateApiV1Restaurants (20201203015942)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201203015942"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateApiV1Locations (20201203193858)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201203193858"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateApiV1Comments (20201206225249)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "api_v1_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "comment" varchar, "rating" integer, "restaurant_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201206225249"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_comments"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "api_v1_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "comment" varchar, "rating" integer, "restaurant_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_locations"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_restaurants"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201206225249)[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201203015942),
+(20201203193858);
+
+[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-06 23:09:54.971785"], ["updated_at", "2020-12-06 23:09:54.971785"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "1d8a77c1574a3da60a401c612607efce27dcfbe0"], ["created_at", "2020-12-06 23:09:54.981150"], ["updated_at", "2020-12-06 23:09:54.981150"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_comments"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "api_v1_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "comment" varchar, "rating" integer, "restaurant_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_locations"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_restaurants"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201206225249)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201203015942),
+(20201203193858);
+
+[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-06 23:09:55.009065"], ["updated_at", "2020-12-06 23:09:55.009065"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-12-06 23:09:55.014760"], ["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "1d8a77c1574a3da60a401c612607efce27dcfbe0"], ["created_at", "2020-12-06 23:09:55.020249"], ["updated_at", "2020-12-06 23:09:55.020249"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_comments"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "api_v1_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "comment" varchar, "rating" integer, "restaurant_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_locations"[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_restaurants"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201206225249)[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201203015942),
+(20201203193858);
+
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-06 23:11:47.646164"], ["updated_at", "2020-12-06 23:11:47.646164"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "1d8a77c1574a3da60a401c612607efce27dcfbe0"], ["created_at", "2020-12-06 23:11:47.656140"], ["updated_at", "2020-12-06 23:11:47.656140"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_comments"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "api_v1_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "comment" varchar, "rating" integer, "restaurant_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_locations"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_restaurants"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201206225249)[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201203015942),
+(20201203193858);
+
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-06 23:11:47.681915"], ["updated_at", "2020-12-06 23:11:47.681915"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-12-06 23:11:47.688331"], ["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "1d8a77c1574a3da60a401c612607efce27dcfbe0"], ["created_at", "2020-12-06 23:11:47.693790"], ["updated_at", "2020-12-06 23:11:47.693790"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateApiV1Comments (20201206225249)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "api_v1_comments"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20201206225249"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateApiV1Comments (20201206225249)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "api_v1_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "comment" varchar, "rating" integer, "restaurant_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201206225249"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_comments"[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "api_v1_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "comment" varchar, "rating" integer, "restaurant_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_locations"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_restaurants"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201206225249)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201203015942),
+(20201203193858);
+
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-06 23:12:09.184124"], ["updated_at", "2020-12-06 23:12:09.184124"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "1d8a77c1574a3da60a401c612607efce27dcfbe0"], ["created_at", "2020-12-06 23:12:09.192578"], ["updated_at", "2020-12-06 23:12:09.192578"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_comments"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "api_v1_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "comment" varchar, "rating" integer, "restaurant_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_locations"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_restaurants"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201206225249)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201203015942),
+(20201203193858);
+
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-06 23:12:09.219333"], ["updated_at", "2020-12-06 23:12:09.219333"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-12-06 23:12:09.225016"], ["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "1d8a77c1574a3da60a401c612607efce27dcfbe0"], ["created_at", "2020-12-06 23:12:09.230199"], ["updated_at", "2020-12-06 23:12:09.230199"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateApiV1Restaurants (20201203015942)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201203015942"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateApiV1Locations (20201203193858)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201203193858"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateApiV1Comments (20201206225249)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "api_v1_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "comment" varchar, "rating" integer, "restaurant_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201206225249"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-06 23:13:20.761051"], ["updated_at", "2020-12-06 23:13:20.761051"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_comments"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "api_v1_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "comment" varchar, "rating" integer, "restaurant_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_locations"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_restaurants"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201206225249)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201203015942),
+(20201203193858);
+
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-06 23:13:26.125778"], ["updated_at", "2020-12-06 23:13:26.125778"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "1d8a77c1574a3da60a401c612607efce27dcfbe0"], ["created_at", "2020-12-06 23:13:26.133662"], ["updated_at", "2020-12-06 23:13:26.133662"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_comments"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "api_v1_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "comment" varchar, "rating" integer, "restaurant_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_locations"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_restaurants"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201206225249)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201203015942),
+(20201203193858);
+
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-06 23:13:26.159483"], ["updated_at", "2020-12-06 23:13:26.159483"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-12-06 23:13:26.165047"], ["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "1d8a77c1574a3da60a401c612607efce27dcfbe0"], ["created_at", "2020-12-06 23:13:26.170379"], ["updated_at", "2020-12-06 23:13:26.170379"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_comments"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "api_v1_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "comment" varchar, "rating" integer, "restaurant_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_locations"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_restaurants"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201206225249)[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201203015942),
+(20201203193858);
+
+[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-06 23:14:14.144669"], ["updated_at", "2020-12-06 23:14:14.144669"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "1d8a77c1574a3da60a401c612607efce27dcfbe0"], ["created_at", "2020-12-06 23:14:14.153044"], ["updated_at", "2020-12-06 23:14:14.153044"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_comments"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "api_v1_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "comment" varchar, "rating" integer, "restaurant_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_locations"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "api_v1_locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "neighborhood" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "api_v1_restaurants"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "api_v1_restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cuisine" varchar, "style" varchar, "phone_number" varchar, "menu" varchar, "address" varchar, "image" varchar, "likes" integer, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201206225249)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201203015942),
+(20201203193858);
+
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-06 23:14:14.179454"], ["updated_at", "2020-12-06 23:14:14.179454"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-12-06 23:14:14.185234"], ["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "1d8a77c1574a3da60a401c612607efce27dcfbe0"], ["created_at", "2020-12-06 23:14:14.190405"], ["updated_at", "2020-12-06 23:14:14.190405"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "West Village"], ["image", "https://image.newyork.com.au/wp-content/uploads/2010/05/West-Village-New-York.jpeg"], ["created_at", "2020-12-06 23:14:14.215435"], ["updated_at", "2020-12-06 23:14:14.215435"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "East Village"], ["image", "https://upload.wikimedia.org/wikipedia/commons/d/d9/East_Village_Second_Avenue.jpg"], ["created_at", "2020-12-06 23:14:14.220091"], ["updated_at", "2020-12-06 23:14:14.220091"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Soho"], ["image", "https://upload.wikimedia.org/wikipedia/commons/9/9e/NYC_SoHo_Green_Street.jpg"], ["created_at", "2020-12-06 23:14:14.224036"], ["updated_at", "2020-12-06 23:14:14.224036"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Lower East Side"], ["image", "https://media-cdn.tripadvisor.com/media/photo-s/0c/bc/16/f9/murales-al-lower-east.jpg"], ["created_at", "2020-12-06 23:14:14.228989"], ["updated_at", "2020-12-06 23:14:14.228989"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Lower West Side"], ["image", "https://nikkilongphotography.files.wordpress.com/2014/05/infinate-streets-ny.jpg"], ["created_at", "2020-12-06 23:14:14.233494"], ["updated_at", "2020-12-06 23:14:14.233494"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.6ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Chelsea"], ["image", "https://media.timeout.com/images/105160348/image.jpg"], ["created_at", "2020-12-06 23:14:14.239267"], ["updated_at", "2020-12-06 23:14:14.239267"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Hell's Kitchen"], ["image", "https://media.timeout.com/images/105259656/630/472/image.jpg"], ["created_at", "2020-12-06 23:14:14.243973"], ["updated_at", "2020-12-06 23:14:14.243973"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Tribeca"], ["image", "https://i.pinimg.com/originals/88/ae/eb/88aeebed9e2f733de2fbde7f34e3f7f4.jpg"], ["created_at", "2020-12-06 23:14:14.265191"], ["updated_at", "2020-12-06 23:14:14.265191"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Greenwich Village"], ["image", "https://www.tripsavvy.com/thmb/MyeXgbO5Vx60sQOqwzivFBpEM1c=/3956x2225/smart/filters:no_upscale()/greenwich-village-street-scene-537559314-5c2d29a3c9e77c0001709e1e.jpg"], ["created_at", "2020-12-06 23:14:14.269982"], ["updated_at", "2020-12-06 23:14:14.269982"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Park Slope"], ["image", "https://media.timeout.com/images/103429959/630/472/image.jpg"], ["created_at", "2020-12-06 23:14:14.274512"], ["updated_at", "2020-12-06 23:14:14.274512"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Flatiron"], ["image", "https://i1.wp.com/nypost.com/wp-content/uploads/sites/2/2017/07/macmillan-leaving-flatiron.jpg?quality=80&strip=all&ssl=1"], ["created_at", "2020-12-06 23:14:14.278975"], ["updated_at", "2020-12-06 23:14:14.278975"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Midtown East"], ["image", "https://images.squarespace-cdn.com/content/v1/5441c56de4b0f7692c6f6c2f/1432669250345-QGGBK39334G4MZSHJQ3J/ke17ZwdGBToddI8pDm48kAGx3IFADtt9koaOuly55F57gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0pTKqSDRwmMK43IUI3HojJX_iGOyvGz0VEAhzFdMwNTUP3iYIRpjRWHZRVGJwIQ0nA/midtown-east-9+-+Copy.jpg"], ["created_at", "2020-12-06 23:14:14.283439"], ["updated_at", "2020-12-06 23:14:14.283439"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Midtown West"], ["image", "https://static.travelweekly.com/i/sized/780/437/www.cfmedia.vfmleonardo.com/imageRepo/6/0/99/449/38/nycmf-exterior-1298-hor-clsc_O.jpg"], ["created_at", "2020-12-06 23:14:14.288154"], ["updated_at", "2020-12-06 23:14:14.288154"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Meatpacking District"], ["image", "https://newyorkyimby.com/wp-content/uploads/2020/05/View-from-9th-Avenue-and-West-14th-Street-of-proposed-restorations-and-addition.jpg"], ["created_at", "2020-12-06 23:14:14.292549"], ["updated_at", "2020-12-06 23:14:14.292549"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Financial District"], ["image", "https://www.duanestreethotel.com/wp-content/uploads/2017/04/GettyImages-641176590.jpg"], ["created_at", "2020-12-06 23:14:14.297453"], ["updated_at", "2020-12-06 23:14:14.297453"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Theater District"], ["image", "https://www.thetravelteam.com/wp-content/uploads/2018/12/nyc-theatre-district-to-do.jpg"], ["created_at", "2020-12-06 23:14:14.301978"], ["updated_at", "2020-12-06 23:14:14.301978"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.6ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Astoria"], ["image", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Astoriaqueens33rdand31st.jpg/1200px-Astoriaqueens33rdand31st.jpg"], ["created_at", "2020-12-06 23:14:14.307224"], ["updated_at", "2020-12-06 23:14:14.307224"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Bushwich"], ["image", "https://www.cubesmart.com/blog/wp-content/uploads/Bushwick-Collective-Mural-Brooklyn-New-York-8.jpg"], ["created_at", "2020-12-06 23:14:14.313757"], ["updated_at", "2020-12-06 23:14:14.313757"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_locations" ("neighborhood", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["neighborhood", "Williamsburgh"], ["image", "https://www.tripsavvy.com/thmb/uU7_xCAmrA1HXVvmOpngDjhq3jk=/3435x2576/smart/filters:no_upscale()/south-williamsburg-streetscape--brooklyn-567893317-5ad92d2aa474be0036f506a3.jpg"], ["created_at", "2020-12-06 23:14:14.319759"], ["updated_at", "2020-12-06 23:14:14.319759"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bonnie's Grill"], ["cuisine", "American"], ["style", "Hot & Spicy Regional American Cuisine"], ["phone_number", "(718) 369-9527"], ["menu", "https://www.eatatbonnies.com/menu"], ["address", "278 5th Ave, Brooklyn, NY 11215"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/hJKYzCF0t95zlFMtyzneQg/l.jpg"], ["likes", 5], ["location_id", 10], ["created_at", "2020-12-06 23:14:14.351575"], ["updated_at", "2020-12-06 23:14:14.351575"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gramercy Tavern"], ["cuisine", "American(New)"], ["style", "Danny Meyer's Flatiron District tavern "], ["phone_number", "(212) 477-0777"], ["menu", "https://www.gramercytavern.com/gramercy-tavern-menu/"], ["address", "42 E 20th St, New York, NY 10003"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/MgfPMoFNmjIWcrMxTZbsvw/l.jpg"], ["likes", 8], ["location_id", 11], ["created_at", "2020-12-06 23:14:14.358210"], ["updated_at", "2020-12-06 23:14:14.358210"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Catch NYC"], ["cuisine", "Asian"], ["style", "Asian Fusion, Sushi Bars, Seafood"], ["phone_number", "(212) 392-5978"], ["menu", "https://catchrestaurants.com/catchnyc/#menu"], ["address", "21 9th Ave, New York, NY 10014"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/NBWlgWmKUEaE-k0CF9b5wg/l.jpg"], ["likes", 3], ["location_id", 14], ["created_at", "2020-12-06 23:14:14.365036"], ["updated_at", "2020-12-06 23:14:14.365036"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.5ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "La Loteria"], ["cuisine", "Mexican"], ["style", "Imaginative twists on Mexican dishes, plus cocktails, presented in a modern, convivial setting."], ["phone_number", "(212) 858-9096"], ["menu", "http://www.laloterianyc.com/menus/"], ["address", "29 7th Ave S, New York, NY 10014"], ["image", "https://images.squarespace-cdn.com/content/v1/546f8abce4b08b01e3cfaa4b/1421176275576-1I0F3UJK8CK3APXMXKMV/ke17ZwdGBToddI8pDm48kKCzQu6R4BT5zqRe40olNKZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTm8gdG5xRTtrVVyLXkddLwchyHhFWTGlN3cUNTMki5PNY1TGRehHG5SCVISp4ZVDSB/IMG_3616.jpg?format=500w"], ["likes", 4], ["location_id", 1], ["created_at", "2020-12-06 23:14:14.372885"], ["updated_at", "2020-12-06 23:14:14.372885"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hortus NYC"], ["cuisine", "Korean"], ["style", "Asian Fusion, Korean, Tapas/Small Plates"], ["phone_number", "(646) 858-3784"], ["menu", "https://www.hortusnyc.com/menu/"], ["address", "271 5th Ave, New York, NY 10016"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/xTBJX2kp5dr69chHlG-pnQ/l.jpg"], ["likes", 1], ["location_id", 13], ["created_at", "2020-12-06 23:14:14.379407"], ["updated_at", "2020-12-06 23:14:14.379407"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Excuse My French"], ["cuisine", "French"], ["style", "Bars, Tapas Bars, French"], ["phone_number", "(212) 780-9600"], ["menu", "https://www.excusemyfrench-nyc.com/copy-of-food-1"], ["address", "96 Orchard St, New York, NY 10002"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/VlKFsXO_TqOorH5sMWREWQ/o.jpg"], ["likes", 2], ["location_id", 4], ["created_at", "2020-12-06 23:14:14.385965"], ["updated_at", "2020-12-06 23:14:14.385965"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Location Load (0.1ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations" WHERE "api_v1_locations"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mApi::V1::Restaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "api_v1_restaurants" ("name", "cuisine", "style", "phone_number", "menu", "address", "image", "likes", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Blue Ribbon Brasserie"], ["cuisine", "American"], ["style", "American (Traditional), Cocktail Bars"], ["phone_number", "(212) 274-0404"], ["menu", "https://www.blueribbonrestaurants.com/restaurants/blue-ribbon-brasserie"], ["address", "97 Sullivan St, New York, NY 10012"], ["image", "https://s3-media0.fl.yelpcdn.com/bphoto/OMYqqgQ-ioT7bCP82xvJDA/o.jpg"], ["likes", 0], ["location_id", 3], ["created_at", "2020-12-06 23:14:14.392932"], ["updated_at", "2020-12-06 23:14:14.392932"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApi::V1::Comment Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_comments" ("title", "comment", "rating", "restaurant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Amazzing !!!"], ["comment", "I was here the other day and I had such a blast!  Thank you guys for everything..."], ["rating", 5], ["restaurant_id", 1], ["created_at", "2020-12-06 23:14:14.424513"], ["updated_at", "2020-12-06 23:14:14.424513"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApi::V1::Restaurant Load (0.1ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApi::V1::Comment Create (0.4ms)[0m  [1m[32mINSERT INTO "api_v1_comments" ("title", "comment", "rating", "restaurant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Omg!"], ["comment", "This was the best thing since I flew to spain for two nights!  "], ["rating", 5], ["restaurant_id", 1], ["created_at", "2020-12-06 23:14:14.430982"], ["updated_at", "2020-12-06 23:14:14.430982"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mApi::V1::Comment Load (0.3ms)[0m  [1m[34mSELECT "api_v1_comments".* FROM "api_v1_comments" LIMIT ?[0m  [["LIMIT", 11]]

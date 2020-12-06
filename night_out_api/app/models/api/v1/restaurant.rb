@@ -1,4 +1,5 @@
 class Api::V1::Restaurant < ApplicationRecord
+    has_many :comments
     belongs_to :location
 
     def self.scope(location)
