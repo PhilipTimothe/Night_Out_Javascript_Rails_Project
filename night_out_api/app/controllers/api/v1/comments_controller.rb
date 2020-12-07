@@ -6,8 +6,22 @@ class Api::V1::CommentsController < ApplicationController
     end
 
     def show
-        # @comments = 
-        render json: @comments, except: [:created_at, :updated_at]
     end
+
+    def create 
+        @comment = Api::V1::Comment.create(comment_params)
+        @comment.rating = @comment.rating.to_i
+        @comment.save
+        render json: @comment, except: [:created_at, :updated_at]
+    end
+
+
+    private 
+    
+    def comment_params
+        params.require(:comment).permit(:title, :comment, :rating)
+    end
+
+
     
 end
