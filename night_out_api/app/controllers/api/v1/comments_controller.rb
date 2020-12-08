@@ -1,16 +1,15 @@
 class Api::V1::CommentsController < ApplicationController
 
     def index
-        @comments = Api::V1::Comment.all
+        @comments =  if params[:restaurant_id]
+            Api::V1::Comment.where(restaurant_id: params[:restaurant_id])
+        end
         render json: @comments, except: [:created_at, :updated_at]
-    end
-
-    def show
     end
 
     def create 
         @comment = Api::V1::Comment.create(comment_params)
-        @comment.rating = @comment.rating.to_i
+        @comment.rating.to_i
         @comment.save
         render json: @comment, except: [:created_at, :updated_at]
     end
