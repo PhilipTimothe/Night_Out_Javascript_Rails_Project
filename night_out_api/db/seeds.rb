@@ -203,19 +203,19 @@ comments =  [
     {
       "id": 1,
       "title": "Amazzing !!!",
-      "comment": "I was here the other day and I had such a blast!  Thank you guys for everything...",
+      "comments": "I was here the other day and I had such a blast!  Thank you guys for everything...",
       "rating": 5,
       "restaurant_id": 1
     },
     {
       "id": 2,
       "title": "Omg!",
-      "comment": "This was the best thing since I flew to spain for two nights!  ",
+      "comments": "This was the best thing since I flew to spain for two nights!  ",
       "rating": 5,
       "restaurant_id": 1
     }
   ]
 
 comments.each do |comment|
-    Api::V1::Comment.create(title: comment[:title], comment: comment[:comment], rating: comment[:rating], restaurant_id: comment[:restaurant_id])
+    Api::V1::Comment.create(title: comment[:title], comments: comment[:comments], rating: comment[:rating], restaurant_id: comment[:restaurant_id])
 end

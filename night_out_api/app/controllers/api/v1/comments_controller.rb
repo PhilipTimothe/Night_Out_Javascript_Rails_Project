@@ -9,7 +9,6 @@ class Api::V1::CommentsController < ApplicationController
 
     def create 
         @comment = Api::V1::Comment.create(comment_params)
-        @comment.rating.to_i
         @comment.save
         render json: @comment, except: [:created_at, :updated_at]
     end
@@ -18,7 +17,7 @@ class Api::V1::CommentsController < ApplicationController
     private 
     
     def comment_params
-        params.require(:comment).permit(:title, :comment, :rating)
+        params.require(:comment).permit(:restaurant_id, :title, :comments, :rating) # restauant_attributes: [ :name, :cuisine, :style, :phone_number,:menu, :address, :image, :likes, :location_id ])
     end
 
 

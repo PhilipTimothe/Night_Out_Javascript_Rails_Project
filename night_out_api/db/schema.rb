@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2020_12_06_225249) do
 
   create_table "api_v1_comments", force: :cascade do |t|
     t.string "title"
-    t.string "comment"
+    t.string "comments"
     t.integer "rating"
     t.integer "restaurant_id"
     t.datetime "created_at", precision: 6, null: false
