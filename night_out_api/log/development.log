@@ -19583,3 +19583,381 @@ Processing by Api::V1::LocationsController#index as */*
 Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.2ms | Allocations: 2831)
 
 
+Started GET "/api/v1/locations" for ::1 at 2020-12-08 23:29:17 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.7ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 68ms (Views: 38.3ms | ActiveRecord: 9.3ms | Allocations: 7764)
+
+
+Started GET "/api/v1/restaurants/3" for ::1 at 2020-12-08 23:29:43 -0500
+Processing by Api::V1::RestaurantsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mApi::V1::Restaurant Load (10.0ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mCACHE Api::V1::Restaurant Load (0.0ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 138ms (Views: 10.7ms | ActiveRecord: 11.0ms | Allocations: 11322)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-08 23:29:47 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.2ms | Allocations: 2848)
+
+
+Started GET "/api/v1/restaurants/11" for ::1 at 2020-12-08 23:29:56 -0500
+Processing by Api::V1::RestaurantsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 11]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mCACHE Api::V1::Restaurant Load (0.1ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 11]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 1648)
+
+
+Started GET "/api/v1/restaurants/2/comments" for ::1 at 2020-12-08 23:30:00 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"restaurant_id"=>"2"}
+  [1m[36mApi::V1::Comment Load (0.5ms)[0m  [1m[34mSELECT "api_v1_comments".* FROM "api_v1_comments" WHERE "api_v1_comments"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/controllers/api/v1/comments_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 5.9ms | ActiveRecord: 1.7ms | Allocations: 1821)
+
+
+Started POST "/api/v1/restaurants/2/comments" for ::1 at 2020-12-08 23:30:18 -0500
+Processing by Api::V1::CommentsController#create as JSON
+  Parameters: {"title"=>"The Best ♥️", "comments"=>"yeah this was amazing!", "rating"=>"4", "restaurant_id"=>"2", "comment"=>{"title"=>"The Best ♥️", "comments"=>"yeah this was amazing!", "rating"=>"4", "restaurant_id"=>"2"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/comments_controller.rb:11:in `create'
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:11:in `create'
+  [1m[36mApi::V1::Comment Create (5.0ms)[0m  [1m[32mINSERT INTO "api_v1_comments" ("title", "comments", "rating", "restaurant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Best ♥️"], ["comments", "yeah this was amazing!"], ["rating", 4], ["restaurant_id", 2], ["created_at", "2020-12-09 04:30:18.418895"], ["updated_at", "2020-12-09 04:30:18.418895"]]
+  ↳ app/controllers/api/v1/comments_controller.rb:11:in `create'
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/comments_controller.rb:11:in `create'
+Completed 200 OK in 48ms (Views: 0.3ms | ActiveRecord: 9.4ms | Allocations: 9863)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-08 23:30:23 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 2833)
+
+
+Started GET "/api/v1/restaurants/11" for ::1 at 2020-12-08 23:30:32 -0500
+Processing by Api::V1::RestaurantsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 11]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mCACHE Api::V1::Restaurant Load (0.0ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 11]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 1631)
+
+
+Started GET "/api/v1/restaurants/2/comments" for ::1 at 2020-12-08 23:30:34 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"restaurant_id"=>"2"}
+  [1m[36mApi::V1::Comment Load (0.2ms)[0m  [1m[34mSELECT "api_v1_comments".* FROM "api_v1_comments" WHERE "api_v1_comments"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/controllers/api/v1/comments_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 989)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-08 23:30:41 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (1.3ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 1.3ms | Allocations: 2831)
+
+
+Started GET "/api/v1/restaurants/13" for ::1 at 2020-12-08 23:30:43 -0500
+Processing by Api::V1::RestaurantsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 13]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mCACHE Api::V1::Restaurant Load (0.0ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 13]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.3ms | Allocations: 1630)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-08 23:30:51 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms | Allocations: 2831)
+
+
+Started GET "/api/v1/restaurants/1" for ::1 at 2020-12-08 23:31:07 -0500
+Processing by Api::V1::RestaurantsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mCACHE Api::V1::Restaurant Load (0.0ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 1630)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-08 23:31:10 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.3ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.3ms | Allocations: 2831)
+
+
+Started GET "/api/v1/restaurants/2" for ::1 at 2020-12-08 23:31:13 -0500
+Processing by Api::V1::RestaurantsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mApi::V1::Restaurant Load (0.1ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 2]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants"[0m
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.4ms | Allocations: 2883)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-08 23:31:32 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/api/v1/restaurants/2" for ::1 at 2020-12-08 23:32:08 -0500
+Processing by Api::V1::RestaurantsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 2]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mApi::V1::Restaurant Load (0.3ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants"[0m
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.4ms | Allocations: 2854)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-08 23:32:14 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.3ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms | Allocations: 2831)
+
+
+Started GET "/api/v1/restaurants/3" for ::1 at 2020-12-08 23:32:15 -0500
+Processing by Api::V1::RestaurantsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mApi::V1::Restaurant Load (0.4ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mCACHE Api::V1::Restaurant Load (0.0ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 1630)
+
+
+Started GET "/api/v1/restaurants/7/comments" for ::1 at 2020-12-08 23:32:17 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"restaurant_id"=>"7"}
+  [1m[36mApi::V1::Comment Load (0.1ms)[0m  [1m[34mSELECT "api_v1_comments".* FROM "api_v1_comments" WHERE "api_v1_comments"."restaurant_id" = ?[0m  [["restaurant_id", 7]]
+  ↳ app/controllers/api/v1/comments_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 860)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-08 23:48:24 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.5ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.5ms | Allocations: 2849)
+
+
+Started GET "/api/v1/restaurants/3" for ::1 at 2020-12-08 23:48:27 -0500
+Processing by Api::V1::RestaurantsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mCACHE Api::V1::Restaurant Load (0.0ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 1659)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-08 23:48:28 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.3ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.3ms | Allocations: 2831)
+
+
+Started GET "/api/v1/restaurants/3" for ::1 at 2020-12-08 23:48:30 -0500
+Processing by Api::V1::RestaurantsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mCACHE Api::V1::Restaurant Load (0.0ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 1630)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-08 23:48:32 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.2ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 2831)
+
+
+Started GET "/api/v1/restaurants/3" for ::1 at 2020-12-08 23:48:34 -0500
+Processing by Api::V1::RestaurantsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mCACHE Api::V1::Restaurant Load (0.0ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 0.2ms | Allocations: 1630)
+
+
+Started GET "/api/v1/restaurants/7/comments" for ::1 at 2020-12-08 23:48:37 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"restaurant_id"=>"7"}
+  [1m[36mApi::V1::Comment Load (0.5ms)[0m  [1m[34mSELECT "api_v1_comments".* FROM "api_v1_comments" WHERE "api_v1_comments"."restaurant_id" = ?[0m  [["restaurant_id", 7]]
+  ↳ app/controllers/api/v1/comments_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.5ms | Allocations: 879)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-08 23:48:39 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.3ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 2831)
+
+
+Started GET "/api/v1/restaurants/3" for ::1 at 2020-12-08 23:48:41 -0500
+Processing by Api::V1::RestaurantsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mApi::V1::Restaurant Load (0.1ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mCACHE Api::V1::Restaurant Load (0.0ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 1630)
+
+
+Started GET "/api/v1/restaurants/7/comments" for ::1 at 2020-12-08 23:48:43 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"restaurant_id"=>"7"}
+  [1m[36mApi::V1::Comment Load (0.2ms)[0m  [1m[34mSELECT "api_v1_comments".* FROM "api_v1_comments" WHERE "api_v1_comments"."restaurant_id" = ?[0m  [["restaurant_id", 7]]
+  ↳ app/controllers/api/v1/comments_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 860)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-08 23:48:44 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.4ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.4ms | Allocations: 2831)
+
+
+Started GET "/api/v1/restaurants/3" for ::1 at 2020-12-08 23:48:46 -0500
+Processing by Api::V1::RestaurantsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mCACHE Api::V1::Restaurant Load (0.0ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 1630)
+
+
+Started GET "/api/v1/restaurants/7/comments" for ::1 at 2020-12-08 23:48:48 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"restaurant_id"=>"7"}
+  [1m[36mApi::V1::Comment Load (0.2ms)[0m  [1m[34mSELECT "api_v1_comments".* FROM "api_v1_comments" WHERE "api_v1_comments"."restaurant_id" = ?[0m  [["restaurant_id", 7]]
+  ↳ app/controllers/api/v1/comments_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 860)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-08 23:48:49 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.3ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 2831)
+
+
+Started GET "/api/v1/restaurants/3" for ::1 at 2020-12-08 23:48:51 -0500
+Processing by Api::V1::RestaurantsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mCACHE Api::V1::Restaurant Load (0.0ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1630)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-08 23:48:53 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.8ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.8ms | Allocations: 2831)
+
+
+Started GET "/api/v1/restaurants/3" for ::1 at 2020-12-08 23:48:55 -0500
+Processing by Api::V1::RestaurantsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mCACHE Api::V1::Restaurant Load (0.0ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 1630)
+
+
+Started GET "/api/v1/restaurants/7/comments" for ::1 at 2020-12-08 23:48:56 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"restaurant_id"=>"7"}
+  [1m[36mApi::V1::Comment Load (0.1ms)[0m  [1m[34mSELECT "api_v1_comments".* FROM "api_v1_comments" WHERE "api_v1_comments"."restaurant_id" = ?[0m  [["restaurant_id", 7]]
+  ↳ app/controllers/api/v1/comments_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 860)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-08 23:49:02 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.3ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 2831)
+
+
+Started GET "/api/v1/restaurants/3" for ::1 at 2020-12-08 23:49:04 -0500
+Processing by Api::V1::RestaurantsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mApi::V1::Restaurant Load (0.2ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mCACHE Api::V1::Restaurant Load (0.0ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 0.2ms | Allocations: 1630)
+
+
+Started GET "/api/v1/restaurants/7/comments" for ::1 at 2020-12-08 23:49:06 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"restaurant_id"=>"7"}
+  [1m[36mApi::V1::Comment Load (0.2ms)[0m  [1m[34mSELECT "api_v1_comments".* FROM "api_v1_comments" WHERE "api_v1_comments"."restaurant_id" = ?[0m  [["restaurant_id", 7]]
+  ↳ app/controllers/api/v1/comments_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 860)
+
+
+Started GET "/api/v1/locations" for ::1 at 2020-12-08 23:49:08 -0500
+Processing by Api::V1::LocationsController#index as */*
+  [1m[36mApi::V1::Location Load (0.3ms)[0m  [1m[34mSELECT "api_v1_locations".* FROM "api_v1_locations"[0m
+  ↳ app/controllers/api/v1/locations_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 2831)
+
+
+Started GET "/api/v1/restaurants/3" for ::1 at 2020-12-08 23:49:09 -0500
+Processing by Api::V1::RestaurantsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mApi::V1::Restaurant Load (0.3ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:9:in `show'
+  [1m[36mCACHE Api::V1::Restaurant Load (0.0ms)[0m  [1m[34mSELECT "api_v1_restaurants".* FROM "api_v1_restaurants" WHERE "api_v1_restaurants"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 1630)
+
+
+Started GET "/api/v1/restaurants/7/comments" for ::1 at 2020-12-08 23:49:11 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"restaurant_id"=>"7"}
+  [1m[36mApi::V1::Comment Load (0.2ms)[0m  [1m[34mSELECT "api_v1_comments".* FROM "api_v1_comments" WHERE "api_v1_comments"."restaurant_id" = ?[0m  [["restaurant_id", 7]]
+  ↳ app/controllers/api/v1/comments_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 860)
+
+
